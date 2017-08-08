@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C4AAAEA01F3993040037DBFF /* Notifire.h in Headers */ = {isa = PBXBuildFile; fileRef = C4AAAE9E1F3993040037DBFF /* Notifire.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C4AAAEA71F3993EF0037DBFF /* Notifire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AAAEA61F3993EF0037DBFF /* Notifire.swift */; };
-		C4AAAEA91F3996010037DBFF /* NotifireType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AAAEA81F3996010037DBFF /* NotifireType.swift */; };
+		C4C2317A1F39A196003B2CBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C231791F39A196003B2CBA /* AppDelegate.swift */; };
+		C4C2317C1F39A196003B2CBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2317B1F39A196003B2CBA /* ViewController.swift */; };
+		C4C2317F1F39A196003B2CBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C2317D1F39A196003B2CBA /* Main.storyboard */; };
+		C4C231811F39A196003B2CBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C231801F39A196003B2CBA /* Assets.xcassets */; };
+		C4C231841F39A196003B2CBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C231821F39A196003B2CBA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C4AAAE9B1F3993040037DBFF /* Notifire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Notifire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4AAAE9E1F3993040037DBFF /* Notifire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notifire.h; sourceTree = "<group>"; };
-		C4AAAE9F1F3993040037DBFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4AAAEA61F3993EF0037DBFF /* Notifire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifire.swift; sourceTree = "<group>"; };
-		C4AAAEA81F3996010037DBFF /* NotifireType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifireType.swift; sourceTree = "<group>"; };
+		C4C231761F39A196003B2CBA /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4C231791F39A196003B2CBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C4C2317B1F39A196003B2CBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C4C2317E1F39A196003B2CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C4C231801F39A196003B2CBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4C231831F39A196003B2CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C4C231851F39A196003B2CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C4AAAE971F3993040037DBFF /* Frameworks */ = {
+		C4C231731F39A196003B2CBA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -31,121 +35,134 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C4AAAE911F3993040037DBFF = {
+		C4C2316D1F39A196003B2CBA = {
 			isa = PBXGroup;
 			children = (
-				C4AAAE9D1F3993040037DBFF /* Notifire */,
-				C4AAAE9C1F3993040037DBFF /* Products */,
+				C4C231781F39A196003B2CBA /* Example */,
+				C4C231771F39A196003B2CBA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C4AAAE9C1F3993040037DBFF /* Products */ = {
+		C4C231771F39A196003B2CBA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C4AAAE9B1F3993040037DBFF /* Notifire.framework */,
+				C4C231761F39A196003B2CBA /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C4AAAE9D1F3993040037DBFF /* Notifire */ = {
+		C4C231781F39A196003B2CBA /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				C4AAAE9E1F3993040037DBFF /* Notifire.h */,
-				C4AAAEA81F3996010037DBFF /* NotifireType.swift */,
-				C4AAAEA61F3993EF0037DBFF /* Notifire.swift */,
-				C4AAAE9F1F3993040037DBFF /* Info.plist */,
+				C4C231791F39A196003B2CBA /* AppDelegate.swift */,
+				C4C2317B1F39A196003B2CBA /* ViewController.swift */,
+				C4C2317D1F39A196003B2CBA /* Main.storyboard */,
+				C4C231801F39A196003B2CBA /* Assets.xcassets */,
+				C4C231821F39A196003B2CBA /* LaunchScreen.storyboard */,
+				C4C231851F39A196003B2CBA /* Info.plist */,
 			);
-			path = Notifire;
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		C4AAAE981F3993040037DBFF /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C4AAAEA01F3993040037DBFF /* Notifire.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		C4AAAE9A1F3993040037DBFF /* Notifire */ = {
+		C4C231751F39A196003B2CBA /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C4AAAEA31F3993040037DBFF /* Build configuration list for PBXNativeTarget "Notifire" */;
+			buildConfigurationList = C4C231881F39A196003B2CBA /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				C4AAAE961F3993040037DBFF /* Sources */,
-				C4AAAE971F3993040037DBFF /* Frameworks */,
-				C4AAAE981F3993040037DBFF /* Headers */,
-				C4AAAE991F3993040037DBFF /* Resources */,
+				C4C231721F39A196003B2CBA /* Sources */,
+				C4C231731F39A196003B2CBA /* Frameworks */,
+				C4C231741F39A196003B2CBA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Notifire;
-			productName = Notifire;
-			productReference = C4AAAE9B1F3993040037DBFF /* Notifire.framework */;
-			productType = "com.apple.product-type.framework";
+			name = Example;
+			productName = Example;
+			productReference = C4C231761F39A196003B2CBA /* Example.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C4AAAE921F3993040037DBFF /* Project object */ = {
+		C4C2316E1F39A196003B2CBA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Farhad;
 				TargetAttributes = {
-					C4AAAE9A1F3993040037DBFF = {
+					C4C231751F39A196003B2CBA = {
 						CreatedOnToolsVersion = 9.0;
-						LastSwiftMigration = 0900;
 					};
 				};
 			};
-			buildConfigurationList = C4AAAE951F3993040037DBFF /* Build configuration list for PBXProject "Notifire" */;
+			buildConfigurationList = C4C231711F39A196003B2CBA /* Build configuration list for PBXProject "Example" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = C4AAAE911F3993040037DBFF;
-			productRefGroup = C4AAAE9C1F3993040037DBFF /* Products */;
+			mainGroup = C4C2316D1F39A196003B2CBA;
+			productRefGroup = C4C231771F39A196003B2CBA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C4AAAE9A1F3993040037DBFF /* Notifire */,
+				C4C231751F39A196003B2CBA /* Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C4AAAE991F3993040037DBFF /* Resources */ = {
+		C4C231741F39A196003B2CBA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C231841F39A196003B2CBA /* LaunchScreen.storyboard in Resources */,
+				C4C231811F39A196003B2CBA /* Assets.xcassets in Resources */,
+				C4C2317F1F39A196003B2CBA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C4AAAE961F3993040037DBFF /* Sources */ = {
+		C4C231721F39A196003B2CBA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4AAAEA71F3993EF0037DBFF /* Notifire.swift in Sources */,
-				C4AAAEA91F3996010037DBFF /* NotifireType.swift in Sources */,
+				C4C2317C1F39A196003B2CBA /* ViewController.swift in Sources */,
+				C4C2317A1F39A196003B2CBA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		C4C2317D1F39A196003B2CBA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4C2317E1F39A196003B2CBA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C4C231821F39A196003B2CBA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4C231831F39A196003B2CBA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		C4AAAEA11F3993040037DBFF /* Debug */ = {
+		C4C231861F39A196003B2CBA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -176,7 +193,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -200,12 +216,10 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		C4AAAEA21F3993040037DBFF /* Release */ = {
+		C4C231871F39A196003B2CBA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -236,7 +250,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -253,47 +266,30 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		C4AAAEA41F3993040037DBFF /* Debug */ = {
+		C4C231891F39A196003B2CBA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Notifire/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ir.farhad..Notifire;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ir.farhad..Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		C4AAAEA51F3993040037DBFF /* Release */ = {
+		C4C2318A1F39A196003B2CBA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Notifire/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ir.farhad..Notifire;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ir.farhad..Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,25 +298,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C4AAAE951F3993040037DBFF /* Build configuration list for PBXProject "Notifire" */ = {
+		C4C231711F39A196003B2CBA /* Build configuration list for PBXProject "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C4AAAEA11F3993040037DBFF /* Debug */,
-				C4AAAEA21F3993040037DBFF /* Release */,
+				C4C231861F39A196003B2CBA /* Debug */,
+				C4C231871F39A196003B2CBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C4AAAEA31F3993040037DBFF /* Build configuration list for PBXNativeTarget "Notifire" */ = {
+		C4C231881F39A196003B2CBA /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C4AAAEA41F3993040037DBFF /* Debug */,
-				C4AAAEA51F3993040037DBFF /* Release */,
+				C4C231891F39A196003B2CBA /* Debug */,
+				C4C2318A1F39A196003B2CBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C4AAAE921F3993040037DBFF /* Project object */;
+	rootObject = C4C2316E1F39A196003B2CBA /* Project object */;
 }
