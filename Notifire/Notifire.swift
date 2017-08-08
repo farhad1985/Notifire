@@ -8,30 +8,70 @@
 
 import UIKit
 
-class Notifire {
+public class Notifire {
     
     var notifireView: UIView?
-    static let default = Notifire()
-
-    private init() {
-        let frame = CGRect(x: 0, y: -200, width: viewController.view.frame.width, height: 200)
-        notifireView = UIView(frame: frame)
-    }
-
-    public func show(target viewController: UIViewController, type: NotifireType) {
-        notifireView?.backgroundColor = getColor(type: type)
-        notifireView?.layer.cornerRadius = 5.0
+    public static let shared = Notifire()
+    private var timer = 3
+    public let title = UILabel()
+    private let height = 80
+    private let overLap = 25
+    
+    public func show(target viewController: UIViewController, type: NotifireType, message: String, timer: Int = 3) {
+        guard notifireView == nil else { return }
+        self.timer = timer
+        setupView(viewController: viewController, type: type)
+        title.text = message
         
-        UIView.animate(withDuration: 1.0) {
-            notifireView?.frame.origin.y = 0
+        UIView.animate(withDuration: 0.4, animations: {
+            self.notifireView?.frame.origin.y = -5
+            
+        }) { _ in
+            UIView.animate(withDuration: 0.4, animations: {
+                self.notifireView?.frame.origin.y = -(CGFloat)(self.overLap)
+            })
+
+            Timer.scheduledTimer(timeInterval: TimeInterval(timer), target: self, selector: #selector(self.dismiss), userInfo: nil, repeats: false)
         }
+    }
+    
+    private func setupView(viewController: UIViewController, type: NotifireType) {
+        let frame = CGRect(x: 0, y: -height, width: Int(viewController.view.frame.width), height: height)
+        notifireView = UIView(frame: frame)
+        notifireView?.backgroundColor = getColor(type: type)
+        notifireView?.layer.cornerRadius = 10.0
+        notifireView?.layer.shadowOpacity = 0.3
+        notifireView?.layer.shadowOffset = CGSize(width: 3, height: 3)
+        
+        viewController.view.addSubview(notifireView!)
+        notifireView?.addSubview(title)
+
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.bottomAnchor.constraint(equalTo: (notifireView?.bottomAnchor)!, constant: -10).isActive = true
+        title.leftAnchor.constraint(equalTo: (notifireView?.leftAnchor)!, constant: 10).isActive = true
+        title.rightAnchor.constraint(equalTo: (notifireView?.rightAnchor)!, constant: -10).isActive = true
+        title.textColor = .white
+        
     }
     
     private func getColor(type: NotifireType) -> UIColor {
         switch type {
-        case .info: return .gray
-        case .error: return .red
-        case .warning: return .yellow
+        case .info: return UIColor(red: 9/255, green: 194/255, blue: 102/255, alpha: 1.0)
+        case .error: return UIColor(red: 1, green: 50/255, blue: 90/255, alpha: 1.0)
+        case .warning: return UIColor(red: 254/255, green: 205/255, blue: 5/255, alpha: 1.0)
+        }
+    }
+    
+    @objc private func dismiss() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.notifireView?.frame.origin.y = -5
+        }) { _ in
+            UIView.animate(withDuration: 0.4, animations: { 
+                self.notifireView?.frame.origin.y = -(CGFloat(self.height + self.overLap))
+            }, completion: { _ in
+                self.notifireView?.removeFromSuperview()
+                self.notifireView = nil
+            })
         }
     }
 }

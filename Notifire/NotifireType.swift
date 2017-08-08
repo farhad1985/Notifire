@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum NotifireType {
+public enum NotifireType {
     case info
     case warning
     case error

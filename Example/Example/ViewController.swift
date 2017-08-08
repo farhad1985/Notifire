@@ -7,19 +7,18 @@
 //
 
 import UIKit
+import Notifire
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func btnShow(_ sender: Any) {
+        Notifire.shared.title.textAlignment = .right
+        Notifire.shared.show(target: self, type: .error, message: "این متن پیش فرض می باشد")
     }
-
-
 }
 
