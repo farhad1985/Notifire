@@ -4,12 +4,12 @@ Pod::Spec.new do |s|
   s.summary          = 'Notifire can show a message. by : farhad faramarzi'
 
  
-  s.homepage         = 'https://github.com/farhad1985/PersianDatePicker'
+  s.homepage         = 'https://github.com/farhad1985/Notifire'
   s.author           = { 'Farhad Faramarzi' => 'farhad.public@gmail.com' }
-  s.license          = { :type => 'GPL2', :file => 'LICENSE' }
-  s.source           = { :git => 'https://github.com/farhad1985/PersianDatePicker.git', :tag => s.version.to_s }
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.source           = { :git => 'https://github.com/farhad1985/Notifire.git', :tag => s.version.to_s }
  
   s.ios.deployment_target = '9.0'
-  s.source_files = 'PersianDatePicker/*'
+  s.source_files = 'Notifire/*'
  
 end
