@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Notifire/Notifire.swift"
-            timestampString = "523947625.268843"
+            timestampString = "523953038.593133"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "show(target:type:message:timer:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "show(type:message:timer:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Notifire/Notifire.swift"
+            timestampString = "523953038.593206"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "topViewController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

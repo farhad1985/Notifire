@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnShow(_ sender: Any) {
-        Notifire.shared.title.textAlignment = .right
-        Notifire.shared.show(target: self, type: .error, message: "این متن پیش فرض می باشد")
+//        Notifire.shared.title.textAlignment = .right
+        Notifire.shared.show(type: .error, message: "this is test")
     }
 }
 

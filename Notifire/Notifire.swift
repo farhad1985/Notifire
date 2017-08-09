@@ -16,23 +16,45 @@ public class Notifire {
     private var timer = 3
     private let height = 100
     private let overLap = 30
-    
-    public func show(target viewController: UIViewController, type: NotifireType, message: String, timer: Int = 3) {
+    private var navBar: UINavigationController?
+    private var isNavBar = false
+    private var hNav = 0
+
+    public func show(type: NotifireType, message: String, timer: Int = 3) {
         guard notifireView == nil else { return }
         self.timer = timer
-        setupView(viewController: viewController, type: type)
+        setupView(type: type)
         title.text = message
         animated()
+        
     }
     
-    private func setupView(viewController: UIViewController, type: NotifireType) {
-        let frame = CGRect(x: 0, y: -height, width: Int(viewController.view.frame.width), height: height)
+    private func topViewController() -> UIViewController? {
+        var top = UIApplication.shared.keyWindow?.rootViewController
+            if let presented = top?.presentedViewController {
+                top = presented
+            } else if let nav = top as? UINavigationController {
+                navBar = nav
+                top = nav.visibleViewController
+                if let nav = navBar {
+                    hNav = Int(nav.navigationBar.frame.height)
+                }
+            } else if let tab = top as? UITabBarController {
+                top = tab.selectedViewController
+            }
+        return top
+    }
+
+    private func setupView(type: NotifireType) {
+        let frameTopVC = topViewController()?.view.frame
+
+        let frame = CGRect(x: 0, y: -height, width: Int((frameTopVC?.width)!), height: height)
         notifireView = UIView(frame: frame)
         notifireView?.backgroundColor = getColor(type: type)
         notifireView?.layer.cornerRadius = 10.0
         notifireView?.layer.shadowOpacity = 0.3
         notifireView?.layer.shadowOffset = CGSize(width: 3, height: 3)
-        viewController.view.addSubview(notifireView!)
+        topViewController()?.view.addSubview(notifireView!)
         notifireView?.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
         title.bottomAnchor.constraint(equalTo: (notifireView?.bottomAnchor)!, constant: -16).isActive = true
@@ -51,10 +73,10 @@ public class Notifire {
     
     private func animated() {
         UIView.animate(withDuration: 0.4, animations: {
-            self.notifireView?.frame.origin.y = -10
+            self.notifireView?.frame.origin.y = CGFloat(-10 + self.hNav)
         }) { _ in
             UIView.animate(withDuration: 0.4, animations: {
-                self.notifireView?.frame.origin.y = -(CGFloat)(self.overLap)
+                self.notifireView?.frame.origin.y = (CGFloat)(-self.overLap + self.hNav)
             })
             Timer.scheduledTimer(timeInterval: TimeInterval(self.timer), target: self, selector: #selector(self.dismiss), userInfo: nil, repeats: false)
         }
@@ -62,7 +84,7 @@ public class Notifire {
     
     @objc private func dismiss() {
         UIView.animate(withDuration: 0.4, animations: {
-            self.notifireView?.frame.origin.y = -10
+            self.notifireView?.frame.origin.y = CGFloat(-10 + self.hNav)
         }) { _ in
             UIView.animate(withDuration: 0.4, animations: { 
                 self.notifireView?.frame.origin.y = -(CGFloat(self.height + self.overLap))
