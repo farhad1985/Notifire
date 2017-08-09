@@ -1,6 +1,6 @@
 # Notifire
 
-#Description
+# Description
 This library provides an easy to use class to show notification views.
 there are three types (intro, error, warning).
 
