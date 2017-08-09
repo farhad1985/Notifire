@@ -10,29 +10,19 @@ import UIKit
 
 public class Notifire {
     
-    var notifireView: UIView?
     public static let shared = Notifire()
-    private var timer = 3
     public let title = UILabel()
-    private let height = 80
-    private let overLap = 25
+    private var notifireView: UIView?
+    private var timer = 3
+    private let height = 100
+    private let overLap = 30
     
     public func show(target viewController: UIViewController, type: NotifireType, message: String, timer: Int = 3) {
         guard notifireView == nil else { return }
         self.timer = timer
         setupView(viewController: viewController, type: type)
         title.text = message
-        
-        UIView.animate(withDuration: 0.4, animations: {
-            self.notifireView?.frame.origin.y = -5
-            
-        }) { _ in
-            UIView.animate(withDuration: 0.4, animations: {
-                self.notifireView?.frame.origin.y = -(CGFloat)(self.overLap)
-            })
-
-            Timer.scheduledTimer(timeInterval: TimeInterval(timer), target: self, selector: #selector(self.dismiss), userInfo: nil, repeats: false)
-        }
+        animated()
     }
     
     private func setupView(viewController: UIViewController, type: NotifireType) {
@@ -42,18 +32,15 @@ public class Notifire {
         notifireView?.layer.cornerRadius = 10.0
         notifireView?.layer.shadowOpacity = 0.3
         notifireView?.layer.shadowOffset = CGSize(width: 3, height: 3)
-        
         viewController.view.addSubview(notifireView!)
         notifireView?.addSubview(title)
-
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.bottomAnchor.constraint(equalTo: (notifireView?.bottomAnchor)!, constant: -10).isActive = true
-        title.leftAnchor.constraint(equalTo: (notifireView?.leftAnchor)!, constant: 10).isActive = true
-        title.rightAnchor.constraint(equalTo: (notifireView?.rightAnchor)!, constant: -10).isActive = true
+        title.bottomAnchor.constraint(equalTo: (notifireView?.bottomAnchor)!, constant: -16).isActive = true
+        title.leftAnchor.constraint(equalTo: (notifireView?.leftAnchor)!, constant: 16).isActive = true
+        title.rightAnchor.constraint(equalTo: (notifireView?.rightAnchor)!, constant: -16).isActive = true
         title.textColor = .white
-        
     }
-    
+  
     private func getColor(type: NotifireType) -> UIColor {
         switch type {
         case .info: return UIColor(red: 9/255, green: 194/255, blue: 102/255, alpha: 1.0)
@@ -62,9 +49,20 @@ public class Notifire {
         }
     }
     
+    private func animated() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.notifireView?.frame.origin.y = -10
+        }) { _ in
+            UIView.animate(withDuration: 0.4, animations: {
+                self.notifireView?.frame.origin.y = -(CGFloat)(self.overLap)
+            })
+            Timer.scheduledTimer(timeInterval: TimeInterval(self.timer), target: self, selector: #selector(self.dismiss), userInfo: nil, repeats: false)
+        }
+    }
+    
     @objc private func dismiss() {
         UIView.animate(withDuration: 0.4, animations: {
-            self.notifireView?.frame.origin.y = -5
+            self.notifireView?.frame.origin.y = -10
         }) { _ in
             UIView.animate(withDuration: 0.4, animations: { 
                 self.notifireView?.frame.origin.y = -(CGFloat(self.height + self.overLap))
