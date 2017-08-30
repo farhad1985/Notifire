@@ -6,7 +6,10 @@
          contextName = "Notifire.setupView(type:):Notifire.swift">
          <PersistentStrings>
             <PersistentString
-               value = "-height + hNav">
+               value = "title.frame.height">
+            </PersistentString>
+            <PersistentString
+               value = "height">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

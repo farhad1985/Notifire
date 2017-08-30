@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4B9F2841F5699D700E6B176 /* Notifire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B9F2831F5699D700E6B176 /* Notifire.framework */; };
+		C4B9F2851F5699D700E6B176 /* Notifire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4B9F2831F5699D700E6B176 /* Notifire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4C2317A1F39A196003B2CBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C231791F39A196003B2CBA /* AppDelegate.swift */; };
 		C4C2317C1F39A196003B2CBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2317B1F39A196003B2CBA /* ViewController.swift */; };
 		C4C231811F39A196003B2CBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C231801F39A196003B2CBA /* Assets.xcassets */; };
@@ -21,6 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C4B9F2851F5699D700E6B176 /* Notifire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -28,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C4B9F2831F5699D700E6B176 /* Notifire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Notifire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C231761F39A196003B2CBA /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C231791F39A196003B2CBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4C2317B1F39A196003B2CBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B9F2841F5699D700E6B176 /* Notifire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +56,7 @@
 		C4C2316D1F39A196003B2CBA = {
 			isa = PBXGroup;
 			children = (
+				C4B9F2831F5699D700E6B176 /* Notifire.framework */,
 				C4C231781F39A196003B2CBA /* Example */,
 				C4C231771F39A196003B2CBA /* Products */,
 			);
