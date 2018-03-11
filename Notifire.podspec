@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Notifire'
-  s.version          = '0.1.5'
+  s.version          = '0.2'
   s.summary          = 'Notifire can show a message. by : farhad faramarzi'
 
  
