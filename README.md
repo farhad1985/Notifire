@@ -25,7 +25,7 @@ if you want to change font it's better that you set it in the appDelegate:
 
 finally insert this code for show notification message:
 
-     Notifire.shared.show(target: self, type: .error, message: "this is a message")
+     Notifire.shared.show(type: .error, message: "this is a message")
 
 
 
