@@ -40,13 +40,5 @@ finally insert this code for show notification message:
      Notifire.shared.show(type: .error, message: "this is a message")
 
 
-
-# Screenshots
-![SuccessUnder](Screenshots/IMG_0945.PNG)
-![SuccessUnder](Screenshots/IMG_0951.PNG)
-![SuccessUnder](Screenshots/IMG_0952.PNG)
-
-
-
 # LICENSE
 Notifire is available under the MIT license. See the LICENSE file for more information.
