@@ -16,7 +16,9 @@ finally insert this code for show notification message:
         
 # Demo
 
-![SuccessUnder](Screenshots/demo.gif)
+<p align="center">
+  <img width="375" height="667" src="Screenshots/demo.gif">
+</p>
 
 # Install
 Notifire is available on Cocoapods
