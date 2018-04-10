@@ -4,6 +4,16 @@
 This library provides an easy to use class to show notification views.
 there are three types (intro, error, warning).
 
+# New Feature
+you can handle a closure when the notifire is finished
+
+finally insert this code for show notification message:
+
+        Notifire.shared.show(type: .error, message: "this is a test") {
+            // you can insert your task 
+            print("finish")
+        }
+        
 # Demo
 
 ![SuccessUnder](Screenshots/demo.gif)
