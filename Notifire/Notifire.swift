@@ -8,12 +8,14 @@
 
 import UIKit
 
+
 public class Notifire {
     
     public static let shared = Notifire()
+    
     public let title = UILabel()
     private var notifireView: UIView = UIView()
-    
+
     private var timer = 3
     private var height = 10
     private let overLap = 55
@@ -23,8 +25,9 @@ public class Notifire {
     private var isShow = false
     private var topViewController: UIViewController?
     private init() {}
+    private var completion: (() -> ())?
     
-    public func show(type: NotifireType, message: String, timer: Int = 3) {
+    public func show(type: NotifireType, message: String, timer: Int = 3, completion: (() -> ())? = nil) {
         if !isShow {
             topViewController = UIApplication.shared.topMostViewController()
             hNav =  Int((topViewController?.topLayoutGuide.length) ?? 0)
@@ -33,9 +36,10 @@ public class Notifire {
             title.numberOfLines = 3
             title.text = message
             setupView(type: type)
+            self.completion = completion
             animated()
         }
-        
+
     }
     
     private func setupView(type: NotifireType) {
@@ -87,6 +91,8 @@ public class Notifire {
             }, completion: { _ in
                 self.notifireView.removeFromSuperview()
                 self.isShow = false
+                self.completion?()
+                self.completion = nil
             })
         }
     }

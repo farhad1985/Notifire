@@ -32,8 +32,7 @@
                                 <rect key="frame" x="161" y="356" width="53" height="30"/>
                                 <state key="normal" title="Present"/>
                                 <connections>
-                                    <action selector="btnShow:" destination="O0t-Ha-aYU" eventType="touchUpInside" id="HZI-ua-xUA"/>
-                                    <segue destination="fNR-au-LdU" kind="presentation" id="jVj-Lg-0BF"/>
+                                    <segue destination="fNR-au-LdU" kind="show" id="aEt-pg-1iB"/>
                                 </connections>
                             </button>
                         </subviews>

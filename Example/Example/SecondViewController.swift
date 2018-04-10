@@ -12,7 +12,7 @@ import Notifire
 class SecondViewController: UIViewController {
 
     @IBAction func didTapShowMessage(_ sender: Any) {
-        Notifire.shared.show(type: .error, message: "this is a test")
+        Notifire.shared.show(type: .info, message: "this is SecondViewController")
     }
     
     @IBAction func didTapClose(_ sender: Any) {

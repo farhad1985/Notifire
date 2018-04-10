@@ -12,8 +12,9 @@ import Notifire
 class ViewController: UIViewController {
 
     @IBAction func btnShow(_ sender: Any) {
-//        Notifire.shared.title.textAlignment = .right
-        Notifire.shared.show(type: .info, message: "this is a test")
+        Notifire.shared.show(type: .error, message: "this is a test") {
+            print("finish")
+        }
     }
 }
 
