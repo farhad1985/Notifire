@@ -18,14 +18,14 @@ you must first import Notifire.
 
      import Notifire
      
-if you want to change font:
+if you want to change font it's better that you set it in the appDelegate:
 
      Notifire.shared.title.font = UIFont(name: "tahoma", size: 12)!
      Notifire.shared.title.textAlignment = .center
 
 finally insert this code for show notification message:
 
-     Notifire.shared.show(target: self, type: .error, message: "this is a message")
+     Notifire.shared.show(type: .error, message: "this is a message")
 
 
 
