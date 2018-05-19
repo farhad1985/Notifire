@@ -105,7 +105,7 @@ extension UIViewController {
             return self
         }
         if let navigation = self.presentedViewController as? UINavigationController {
-            return navigation.visibleViewController!.topMostViewController()
+            return navigation
         }
         if let tab = self.presentedViewController as? UITabBarController {
             if let selectedTab = tab.selectedViewController {
