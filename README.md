@@ -3,7 +3,7 @@
 # Description
 Notifire is a message view library for iOS. It's very flexible. And written in Swift.
 
-Message views can be displayed at the top of the screen, over or under the status bar, or behind navigation bars and tab bars. There's an interactive dismiss gesture. You can dim the background if you like. And a lot more!
+Message views can be displayed at the top of the screen, over or under the status bar, and infront of the navigation bars. There's an interactive dismiss gesture. You can dim the background if you like. And a lot more!
 
 This library provides an easy to use class to show notification views.
 there are three types (intro, error, warning).
