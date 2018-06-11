@@ -12,7 +12,7 @@ import Notifire
 class ViewController: UIViewController {
 
     @IBAction func btnShow(_ sender: Any) {
-        Notifire.shared.show(type: .error, message: "this is a test") {
+        Notifire.shared.show(type: .error, message: "Welcome to Notifire") {
             print("finish")
         }
     }
