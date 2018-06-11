@@ -8,15 +8,15 @@
 
 import UIKit
 
-
 public class Notifire {
     
     public static let shared = Notifire()
     
     public let title = UILabel()
     private var notifireView: UIView = UIView()
-
+    
     private var timer = 3
+    private var timerNotifire: Timer?
     private var height = 10
     private let overLap = 55
     private var navBar: UINavigationController?
@@ -26,6 +26,8 @@ public class Notifire {
     private var topViewController: UIViewController?
     private init() {}
     private var completion: (() -> ())?
+    var tap: UISwipeGestureRecognizer!
+    var line = UIView()
     
     public func show(type: NotifireType, message: String, timer: Int = 3, completion: (() -> ())? = nil) {
         if !isShow {
@@ -38,8 +40,11 @@ public class Notifire {
             setupView(type: type)
             self.completion = completion
             animated()
+            tap = UISwipeGestureRecognizer(target: self, action: #selector(dismiss))
+            tap.direction = .up
+            notifireView.addGestureRecognizer(tap)
         }
-
+        
     }
     
     private func setupView(type: NotifireType) {
@@ -61,6 +66,15 @@ public class Notifire {
         notifireView.layoutSubviews()
         height = Int(title.frame.height + 100)
         notifireView.frame.size.height = CGFloat(height)
+        
+        line.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+        line.layer.cornerRadius = 2
+        notifireView.addSubview(line)
+        line.translatesAutoresizingMaskIntoConstraints = false
+        line.bottomAnchor.constraint(equalTo: notifireView.bottomAnchor, constant: -3).isActive = true
+        line.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        line.heightAnchor.constraint(equalToConstant: 4).isActive = true
+        line.centerXAnchor.constraint(equalTo: notifireView.centerXAnchor).isActive = true
     }
     
     private func getColor(type: NotifireType) -> UIColor {
@@ -71,22 +85,23 @@ public class Notifire {
         }
     }
     
-    private func animated() {
+    private func animated(sender: UITapGestureRecognizer? = nil) {
         UIView.animate(withDuration: 0.5, animations: {
             self.notifireView.frame.origin.y = CGFloat(-30 + self.hNav)
         }) { _ in
             UIView.animate(withDuration: 0.4, animations: {
                 self.notifireView.frame.origin.y = (CGFloat)(-self.overLap + self.hNav)
             })
-            Timer.scheduledTimer(timeInterval: TimeInterval(self.timer), target: self, selector: #selector(self.dismiss), userInfo: nil, repeats: false)
+            self.timerNotifire = Timer.scheduledTimer(timeInterval: TimeInterval(self.timer), target: self, selector: #selector(self.dismiss), userInfo: nil, repeats: false)
         }
     }
     
     @objc private func dismiss() {
+        timerNotifire?.invalidate()
         UIView.animate(withDuration: 0.4, animations: {
             self.notifireView.frame.origin.y = CGFloat(-30 + self.hNav)
         }) { _ in
-            UIView.animate(withDuration: 0.4, animations: { 
+            UIView.animate(withDuration: 0.4, animations: {
                 self.notifireView.frame.origin.y = -(CGFloat(self.height + self.overLap))
             }, completion: { _ in
                 self.notifireView.removeFromSuperview()
@@ -97,6 +112,7 @@ public class Notifire {
         }
     }
 }
+
 
 
 extension UIViewController {
