@@ -121,6 +121,9 @@ extension UIViewController {
             return self
         }
         if let navigation = self.presentedViewController as? UINavigationController {
+             if let visibleViewController = navigation.visibleViewController {
+                return visibleViewController
+            }
             return navigation
         }
         if let tab = self.presentedViewController as? UITabBarController {
