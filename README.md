@@ -38,6 +38,9 @@ if you want to change font it's better that you set it in the appDelegate:
 
      Notifire.shared.title.font = UIFont(name: "tahoma", size: 12)!
      Notifire.shared.title.textAlignment = .center
+     
+     // for change text color
+     Notifire.shared.color = .white
 
 finally insert this code for show notification message:
 
