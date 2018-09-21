@@ -13,6 +13,8 @@ public class Notifire {
     public static let shared = Notifire()
     
     public let title = UILabel()
+    public let color = UIColor.white
+
     private var notifireView: UIView = UIView()
     
     private var timer = 3
@@ -62,7 +64,7 @@ public class Notifire {
         title.bottomAnchor.constraint(equalTo: (notifireView.bottomAnchor), constant: -16).isActive = true
         title.leftAnchor.constraint(equalTo: (notifireView.leftAnchor), constant: 16).isActive = true
         title.rightAnchor.constraint(equalTo: (notifireView.rightAnchor), constant: -16).isActive = true
-        title.textColor = .white
+        title.textColor = color
         notifireView.layoutSubviews()
         height = Int(title.frame.height + 100)
         notifireView.frame.size.height = CGFloat(height)
