@@ -16,5 +16,11 @@ class ViewController: UIViewController {
             print("finish")
         }
     }
+    
+    @IBAction func btnCustomeShow(_ sender: Any) {
+        Notifire.shared.show(type: .custome(backgroundColor: .lightGray, textColor: .yellow), message: "سلام ایران", textAlignment: .right, completion: {
+            print("finish")
+        })
+    }
 }
 
