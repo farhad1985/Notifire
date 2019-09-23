@@ -25,7 +25,6 @@ public class Notifire {
     private var isNavBar = false
     private var hNav = -15
     private var isShow = false
-    private var topViewController: UIViewController?
     private init() {}
     private var completion: (() -> ())?
     var tap: UISwipeGestureRecognizer!
@@ -33,8 +32,7 @@ public class Notifire {
     
     public func show(type: NotifireType, message: String, timer: Int = 3, textAlignment:NSTextAlignment = .left, completion: (() -> ())? = nil) {
         if !isShow {
-            topViewController = UIApplication.shared.topMostViewController()
-            hNav =  Int((topViewController?.topLayoutGuide.length) ?? 0)
+            hNav =  Int((UIApplication.shared.topMostViewController()?.topLayoutGuide.length) ?? 0)
             isShow = true
             self.timer = timer
             title.numberOfLines = 3
@@ -51,15 +49,13 @@ public class Notifire {
     }
     
     private func setupView(type: NotifireType) {
-        let frameTopVC = topViewController?.view.frame
-        
-        let frame = CGRect(x: 0, y: -1000, width: Int((frameTopVC?.width)!), height: height)
+        let frame = CGRect(x: 0, y: -1000, width: Int((UIApplication.shared.topMostViewController()?.view.frame.width)!), height: height)
         notifireView.frame = frame
         notifireView.backgroundColor = getColor(type: type).0
         notifireView.layer.cornerRadius = 10.0
         notifireView.layer.shadowOpacity = 0.3
         notifireView.layer.shadowOffset = CGSize(width: 3, height: 3)
-        topViewController?.view.addSubview(notifireView)
+        UIApplication.shared.keyWindow?.addSubview(notifireView)
         notifireView.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
         title.bottomAnchor.constraint(equalTo: (notifireView.bottomAnchor), constant: -16).isActive = true

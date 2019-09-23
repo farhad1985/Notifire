@@ -18,9 +18,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnCustomeShow(_ sender: Any) {
-        Notifire.shared.show(type: .custome(backgroundColor: .lightGray, textColor: .yellow), message: "سلام ایران", textAlignment: .right, completion: {
+        Notifire.shared.show(type: .custome(backgroundColor: .lightGray, textColor: .yellow), message: "right to left message", textAlignment: .right, completion: {
             print("finish")
         })
+    }
+    
+    @IBAction func btnPresentSecondViewController(_ sender: Any) {
+        let secondViewController = storyboard!.instantiateViewController(withIdentifier: "SecondViewController")
+        secondViewController.modalPresentationStyle = .overCurrentContext
+        self.present(secondViewController, animated: true, completion: {})
     }
 }
 
