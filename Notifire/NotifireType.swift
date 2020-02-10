@@ -12,4 +12,5 @@ public enum NotifireType {
     case info
     case warning
     case error
+    case custome(backgroundColor:UIColor, textColor:UIColor)
 }

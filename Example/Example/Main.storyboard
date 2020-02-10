@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="13K-P3-12E">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="13K-P3-12E">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,22 +19,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRQ-dp-drp">
-                                <rect key="frame" x="135" y="318" width="104" height="30"/>
-                                <state key="normal" title="Show message"/>
-                                <connections>
-                                    <action selector="btnShow:" destination="O0t-Ha-aYU" eventType="touchUpInside" id="CKK-lx-Lg3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0z-e3-fv4">
-                                <rect key="frame" x="161" y="356" width="53" height="30"/>
-                                <state key="normal" title="Present"/>
-                                <connections>
-                                    <segue destination="fNR-au-LdU" kind="show" id="aEt-pg-1iB"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Do9-78-POQ">
+                                <rect key="frame" x="124" y="279" width="127" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRQ-dp-drp">
+                                        <rect key="frame" x="11.5" y="0.0" width="104" height="30"/>
+                                        <state key="normal" title="Show message"/>
+                                        <connections>
+                                            <action selector="btnShow:" destination="O0t-Ha-aYU" eventType="touchUpInside" id="CKK-lx-Lg3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7Z-B4-hDI">
+                                        <rect key="frame" x="0.0" y="30" width="127" height="30"/>
+                                        <state key="normal" title="Custome message"/>
+                                        <connections>
+                                            <action selector="btnCustomeShow:" destination="O0t-Ha-aYU" eventType="touchUpInside" id="d6C-sv-HEW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0z-e3-fv4">
+                                        <rect key="frame" x="37" y="60" width="53" height="30"/>
+                                        <state key="normal" title="Present"/>
+                                        <connections>
+                                            <action selector="btnPresentSecondViewController:" destination="O0t-Ha-aYU" eventType="touchUpInside" id="fQQ-9q-1Sc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="R7m-HW-tdB">
-                                <rect key="frame" x="112" y="129" width="150" height="150"/>
+                                <rect key="frame" x="112.5" y="109" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Gou-5J-DZc"/>
                                     <constraint firstAttribute="width" constant="150" id="ec4-51-Gyg"/>
@@ -46,11 +56,9 @@
                         <color key="backgroundColor" red="0.97255557775497437" green="0.9725373387336731" blue="0.97254973649978638" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="R7m-HW-tdB" firstAttribute="centerX" secondItem="Tvi-fh-xZX" secondAttribute="centerX" id="1yC-Nv-rxt"/>
-                            <constraint firstItem="B0z-e3-fv4" firstAttribute="centerX" secondItem="Tvi-fh-xZX" secondAttribute="centerX" id="3bG-FS-dKi"/>
                             <constraint firstItem="R7m-HW-tdB" firstAttribute="top" secondItem="Qvr-bP-7mi" secondAttribute="bottom" constant="65" id="6Pp-pI-jF1"/>
-                            <constraint firstItem="bRQ-dp-drp" firstAttribute="centerY" secondItem="Tvi-fh-xZX" secondAttribute="centerY" id="9eM-VN-qup"/>
-                            <constraint firstItem="B0z-e3-fv4" firstAttribute="top" secondItem="bRQ-dp-drp" secondAttribute="bottom" constant="8" id="ULv-fn-V3o"/>
-                            <constraint firstItem="bRQ-dp-drp" firstAttribute="centerX" secondItem="Tvi-fh-xZX" secondAttribute="centerX" id="kcd-L1-1qp"/>
+                            <constraint firstItem="Do9-78-POQ" firstAttribute="centerX" secondItem="Tvi-fh-xZX" secondAttribute="centerX" id="seS-l8-yxc"/>
+                            <constraint firstItem="Do9-78-POQ" firstAttribute="top" secondItem="R7m-HW-tdB" secondAttribute="bottom" constant="20" id="wwS-ti-uXN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dtp-zM-goM"/>
@@ -62,7 +70,7 @@
         <!--Second View Controller-->
         <scene sceneID="TTw-AO-gjN">
             <objects>
-                <viewController id="fNR-au-LdU" customClass="SecondViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="fNR-au-LdU" customClass="SecondViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JhN-ME-dEz"/>
                         <viewControllerLayoutGuide type="bottom" id="Ez2-Fh-MJy"/>
@@ -72,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2d-Wa-EqJ">
-                                <rect key="frame" x="135" y="318" width="104" height="30"/>
+                                <rect key="frame" x="135.5" y="318.5" width="104" height="30"/>
                                 <state key="normal" title="Show message"/>
                                 <connections>
                                     <action selector="btnShow:" destination="O0t-Ha-aYU" eventType="touchUpInside" id="e63-5B-CkL"/>
@@ -80,7 +88,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVT-iY-WjX">
-                                <rect key="frame" x="168" y="356" width="39" height="30"/>
+                                <rect key="frame" x="168" y="356.5" width="39" height="30"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
                                     <action selector="didTapClose:" destination="fNR-au-LdU" eventType="touchUpInside" id="r5Q-vR-2TE"/>
@@ -106,7 +114,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="13K-P3-12E" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8p2-F7-opO">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
