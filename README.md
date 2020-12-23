@@ -1,5 +1,7 @@
 # Notifire
 
+<img src ="Screenshots/logo.png" width=200 />
+
 # Description
 Notifire is a message view library for iOS. It's very flexible. And written in Swift.
 
@@ -45,6 +47,7 @@ if you want to change font it's better that you set it in the appDelegate:
 finally insert this code for show notification message:
 
      Notifire.shared.show(type: .error, message: "this is a message")
+
 
 
 # LICENSE
