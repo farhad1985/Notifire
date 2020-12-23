@@ -10,23 +10,37 @@ import UIKit
 import Notifire
 
 class ViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // change font
+        Notifire.shared.title.font = UIFont.systemFont(ofSize: 18)
+
+    }
 
     @IBAction func btnShow(_ sender: Any) {
-        Notifire.shared.show(type: .error, message: "Welcome to Notifire") {
+        
+        Notifire.shared.show(type: .info,
+                             message: "Welcome to Notifire") {
             print("finish")
         }
     }
     
     @IBAction func btnCustomeShow(_ sender: Any) {
-        Notifire.shared.show(type: .custome(backgroundColor: .lightGray, textColor: .yellow), message: "right to left message", textAlignment: .right, completion: {
+        let color = UIColor(red: 94/255,
+                            green: 53/255,
+                            blue: 177/255,
+                            alpha: 1)
+                
+        Notifire.shared.show(type: .custome(backgroundColor: color,
+                                            textColor: .white),
+                             message: "This is the custom Color",
+                             completion: {
+                                
             print("finish")
         })
     }
     
-    @IBAction func btnPresentSecondViewController(_ sender: Any) {
-        let secondViewController = storyboard!.instantiateViewController(withIdentifier: "SecondViewController")
-        secondViewController.modalPresentationStyle = .overCurrentContext
-        self.present(secondViewController, animated: true, completion: {})
-    }
 }
 
