@@ -21,7 +21,6 @@
 		C4241DAA25936B0000B64FDD /* ExNotifireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotifireViewController.swift; sourceTree = "<group>"; };
 		C4AAAE9B1F3993040037DBFF /* Notifire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Notifire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AAAE9E1F3993040037DBFF /* Notifire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notifire.h; sourceTree = "<group>"; };
-		C4AAAE9F1F3993040037DBFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4AAAEA61F3993EF0037DBFF /* Notifire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifire.swift; sourceTree = "<group>"; };
 		C4AAAEA81F3996010037DBFF /* NotifireType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifireType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +61,7 @@
 				C4AAAE9C1F3993040037DBFF /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		C4AAAE9C1F3993040037DBFF /* Products */ = {
 			isa = PBXGroup;
@@ -78,7 +78,6 @@
 				C415413F259331DD00F3B87F /* Model */,
 				C4AAAEA61F3993EF0037DBFF /* Notifire.swift */,
 				C4AAAE9E1F3993040037DBFF /* Notifire.h */,
-				C4AAAE9F1F3993040037DBFF /* Info.plist */,
 			);
 			path = Notifire;
 			sourceTree = "<group>";
