@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/farhad1985/Notifire.git', :tag => s.version.to_s }
  
   s.ios.deployment_target = '10.0'
-  s.source_files = '*.swift'
+  s.source_files = 'Notifire/**/*.swift''
   s.swift_version = '5'
 
 end
