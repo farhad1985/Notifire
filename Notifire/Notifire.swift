@@ -32,7 +32,7 @@ public class Notifire {
     
     public func show(type: NotifireType, message: String, timer: Int = 3, textAlignment:NSTextAlignment = .left, completion: (() -> ())? = nil) {
         if !isShow {
-            hNav =  Int((UIApplication.shared.topMostViewController()?.topLayoutGuide.length) ?? 0)
+            hNav =  Int((UIApplication.shared.getTopViewController()?.topLayoutGuide.length) ?? 0)
             isShow = true
             self.timer = timer
             title.numberOfLines = 3
@@ -49,7 +49,7 @@ public class Notifire {
     }
     
     private func setupView(type: NotifireType) {
-        let frame = CGRect(x: 0, y: -1000, width: Int((UIApplication.shared.topMostViewController()?.view.frame.width)!), height: height)
+        let frame = CGRect(x: 0, y: -1000, width: Int((UIApplication.shared.getTopViewController()?.view.frame.width)!), height: height)
         notifireView.frame = frame
         notifireView.backgroundColor = getColor(type: type).0
         notifireView.layer.cornerRadius = 10.0
@@ -113,31 +113,3 @@ public class Notifire {
     }
 }
 
-
-
-extension UIViewController {
-    func topMostViewController() -> UIViewController {
-        if self.presentedViewController == nil {
-            return self
-        }
-        if let navigation = self.presentedViewController as? UINavigationController {
-             if let visibleViewController = navigation.visibleViewController {
-                return visibleViewController
-            }
-            return navigation
-        }
-        if let tab = self.presentedViewController as? UITabBarController {
-            if let selectedTab = tab.selectedViewController {
-                return selectedTab.topMostViewController()
-            }
-            return tab.topMostViewController()
-        }
-        return self.presentedViewController!.topMostViewController()
-    }
-}
-
-extension UIApplication {
-    func topMostViewController() -> UIViewController? {
-        return self.keyWindow?.rootViewController?.topMostViewController()
-    }
-}

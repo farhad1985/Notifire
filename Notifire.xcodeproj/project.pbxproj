@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C415413A2593304800F3B87F /* NotifirePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41541392593304800F3B87F /* NotifirePosition.swift */; };
+		C415413D2593310A00F3B87F /* ExNotifire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C415413C2593310A00F3B87F /* ExNotifire.swift */; };
 		C4AAAEA01F3993040037DBFF /* Notifire.h in Headers */ = {isa = PBXBuildFile; fileRef = C4AAAE9E1F3993040037DBFF /* Notifire.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4AAAEA71F3993EF0037DBFF /* Notifire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AAAEA61F3993EF0037DBFF /* Notifire.swift */; };
 		C4AAAEA91F3996010037DBFF /* NotifireType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AAAEA81F3996010037DBFF /* NotifireType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C41541392593304800F3B87F /* NotifirePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifirePosition.swift; sourceTree = "<group>"; };
+		C415413C2593310A00F3B87F /* ExNotifire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNotifire.swift; sourceTree = "<group>"; };
 		C4AAAE9B1F3993040037DBFF /* Notifire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Notifire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AAAE9E1F3993040037DBFF /* Notifire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notifire.h; sourceTree = "<group>"; };
 		C4AAAE9F1F3993040037DBFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,9 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				C4AAAE9E1F3993040037DBFF /* Notifire.h */,
+				C41541392593304800F3B87F /* NotifirePosition.swift */,
 				C4AAAEA81F3996010037DBFF /* NotifireType.swift */,
 				C4AAAEA61F3993EF0037DBFF /* Notifire.swift */,
 				C4AAAE9F1F3993040037DBFF /* Info.plist */,
+				C415413C2593310A00F3B87F /* ExNotifire.swift */,
 			);
 			path = Notifire;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C415413D2593310A00F3B87F /* ExNotifire.swift in Sources */,
 				C4AAAEA71F3993EF0037DBFF /* Notifire.swift in Sources */,
 				C4AAAEA91F3996010037DBFF /* NotifireType.swift in Sources */,
+				C415413A2593304800F3B87F /* NotifirePosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
