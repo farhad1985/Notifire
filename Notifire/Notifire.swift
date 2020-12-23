@@ -18,34 +18,38 @@ public class Notifire {
     var tap: UISwipeGestureRecognizer!
     var line = UIView()
 
-    private var notifireView: UIView = UIView()
+    var notifireView: UIView = UIView()
     
-    private var timer = 2
-    private var height = 10
-    private let overLap = 55
-    private var hNav = -15
+    var timer = 2
+    var height = 10
+    let overLap = 65
+    var hNav = 0
 
-    private var isNavBar = false
-    private var isShow = false
+    var isNavBar = false
+    var isShow = false
 
-    private var timerNotifire: Timer?
-    private var navBar: UINavigationController?
-    private var completion: (() -> ())?
+    var animation: NotifireAnimationType = .jelly
+    var timerNotifire: Timer?
+    var navBar: UINavigationController?
+    var completion: (() -> ())?
     
-    private init() {}
+    init() {}
 
     
     public func show(type: NotifireType,
                      message: String,
                      timer: Int = 2,
+                     animation: NotifireAnimationType,
                      textAlignment:NSTextAlignment = .left,
                      completion: (() -> ())? = nil) {
         
         if !isShow {
             self.timer = timer
             self.completion = completion
+            self.animation = animation
             
-            hNav =  Int((UIApplication.shared.getTopViewController()?.topLayoutGuide.length) ?? 0)
+            hNav =  Int((UIApplication.shared.getTopViewController()?.navigationController?.navigationBar.frame.height) ?? 0) + 30
+            
             isShow = true
 
             title.numberOfLines = 3
@@ -53,11 +57,21 @@ public class Notifire {
             title.textAlignment = textAlignment
             setupView(type: type)
             animated()
-            tap = UISwipeGestureRecognizer(target: self, action: #selector(dismiss))
+            tap = UISwipeGestureRecognizer(target: self, action: #selector(dismissDissolve))
             tap.direction = .up
             notifireView.addGestureRecognizer(tap)
         }
         
+    }
+    
+    func animated() {
+        switch animation {
+        case .jelly:
+            animatedJelly()
+            
+        case .dissolve:
+            animatedDissolve()
+        }
     }
     
     private func setupView(type: NotifireType) {
@@ -70,7 +84,7 @@ public class Notifire {
         UIApplication.shared.keyWindow?.addSubview(notifireView)
         notifireView.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.bottomAnchor.constraint(equalTo: (notifireView.bottomAnchor), constant: -16).isActive = true
+        title.bottomAnchor.constraint(equalTo: (notifireView.bottomAnchor), constant: -24).isActive = true
         title.leftAnchor.constraint(equalTo: (notifireView.leftAnchor), constant: 16).isActive = true
         title.rightAnchor.constraint(equalTo: (notifireView.rightAnchor), constant: -16).isActive = true
         title.textColor = getColor(type: type).1
@@ -97,32 +111,7 @@ public class Notifire {
         case .custome(let backgroundColor, let textColor): return (backgroundColor, textColor)
         }
     }
-    
-    private func animated(sender: UITapGestureRecognizer? = nil) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.notifireView.frame.origin.y = CGFloat(-30 + self.hNav)
-        }) { _ in
-            UIView.animate(withDuration: 0.4, animations: {
-                self.notifireView.frame.origin.y = (CGFloat)(-self.overLap + self.hNav)
-            })
-            self.timerNotifire = Timer.scheduledTimer(timeInterval: TimeInterval(self.timer), target: self, selector: #selector(self.dismiss), userInfo: nil, repeats: false)
-        }
-    }
-    
-    @objc private func dismiss() {
-        timerNotifire?.invalidate()
-        UIView.animate(withDuration: 0.4, animations: {
-            self.notifireView.frame.origin.y = CGFloat(-30 + self.hNav)
-        }) { _ in
-            UIView.animate(withDuration: 0.4, animations: {
-                self.notifireView.frame.origin.y = -(CGFloat(self.height + self.overLap))
-            }, completion: { _ in
-                self.notifireView.removeFromSuperview()
-                self.isShow = false
-                self.completion?()
-                self.completion = nil
-            })
-        }
-    }
 }
+
+
 

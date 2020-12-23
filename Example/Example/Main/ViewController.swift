@@ -22,7 +22,8 @@ class ViewController: UIViewController {
     @IBAction func btnShow(_ sender: Any) {
         
         Notifire.shared.show(type: .info,
-                             message: "Welcome to Notifire") {
+                             message: "Welcome to Notifire",
+                             animation: .jelly) {
             print("finish")
         }
     }
@@ -35,7 +36,9 @@ class ViewController: UIViewController {
                 
         Notifire.shared.show(type: .custome(backgroundColor: color,
                                             textColor: .white),
+                             
                              message: "This is the custom Color",
+                             animation: .dissolve,
                              completion: {
                                 
             print("finish")
