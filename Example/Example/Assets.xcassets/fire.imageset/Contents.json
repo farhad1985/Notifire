@@ -1,21 +1,23 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
       "filename" : "Screen Shot 2018-06-11 at 11.59.02 AM.png",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Screen Shot 2018-06-11 at 11.59.02 AM-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Screen Shot 2018-06-11 at 11.59.02 AM-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

@@ -15,31 +15,43 @@ public class Notifire {
     public let title = UILabel()
     public let color = UIColor.white
 
-    private var notifireView: UIView = UIView()
-    
-    private var timer = 3
-    private var timerNotifire: Timer?
-    private var height = 10
-    private let overLap = 55
-    private var navBar: UINavigationController?
-    private var isNavBar = false
-    private var hNav = -15
-    private var isShow = false
-    private init() {}
-    private var completion: (() -> ())?
     var tap: UISwipeGestureRecognizer!
     var line = UIView()
+
+    private var notifireView: UIView = UIView()
     
-    public func show(type: NotifireType, message: String, timer: Int = 3, textAlignment:NSTextAlignment = .left, completion: (() -> ())? = nil) {
+    private var timer = 2
+    private var height = 10
+    private let overLap = 55
+    private var hNav = -15
+
+    private var isNavBar = false
+    private var isShow = false
+
+    private var timerNotifire: Timer?
+    private var navBar: UINavigationController?
+    private var completion: (() -> ())?
+    
+    private init() {}
+
+    
+    public func show(type: NotifireType,
+                     message: String,
+                     timer: Int = 2,
+                     textAlignment:NSTextAlignment = .left,
+                     completion: (() -> ())? = nil) {
+        
         if !isShow {
-            hNav =  Int((UIApplication.shared.topMostViewController()?.topLayoutGuide.length) ?? 0)
-            isShow = true
             self.timer = timer
+            self.completion = completion
+            
+            hNav =  Int((UIApplication.shared.getTopViewController()?.topLayoutGuide.length) ?? 0)
+            isShow = true
+
             title.numberOfLines = 3
             title.text = message
             title.textAlignment = textAlignment
             setupView(type: type)
-            self.completion = completion
             animated()
             tap = UISwipeGestureRecognizer(target: self, action: #selector(dismiss))
             tap.direction = .up
@@ -49,7 +61,7 @@ public class Notifire {
     }
     
     private func setupView(type: NotifireType) {
-        let frame = CGRect(x: 0, y: -1000, width: Int((UIApplication.shared.topMostViewController()?.view.frame.width)!), height: height)
+        let frame = CGRect(x: 0, y: -1000, width: Int((UIApplication.shared.getTopViewController()?.view.frame.width)!), height: height)
         notifireView.frame = frame
         notifireView.backgroundColor = getColor(type: type).0
         notifireView.layer.cornerRadius = 10.0
@@ -62,6 +74,7 @@ public class Notifire {
         title.leftAnchor.constraint(equalTo: (notifireView.leftAnchor), constant: 16).isActive = true
         title.rightAnchor.constraint(equalTo: (notifireView.rightAnchor), constant: -16).isActive = true
         title.textColor = getColor(type: type).1
+
         notifireView.layoutSubviews()
         height = Int(title.frame.height + 100)
         notifireView.frame.size.height = CGFloat(height)
@@ -113,31 +126,3 @@ public class Notifire {
     }
 }
 
-
-
-extension UIViewController {
-    func topMostViewController() -> UIViewController {
-        if self.presentedViewController == nil {
-            return self
-        }
-        if let navigation = self.presentedViewController as? UINavigationController {
-             if let visibleViewController = navigation.visibleViewController {
-                return visibleViewController
-            }
-            return navigation
-        }
-        if let tab = self.presentedViewController as? UITabBarController {
-            if let selectedTab = tab.selectedViewController {
-                return selectedTab.topMostViewController()
-            }
-            return tab.topMostViewController()
-        }
-        return self.presentedViewController!.topMostViewController()
-    }
-}
-
-extension UIApplication {
-    func topMostViewController() -> UIViewController? {
-        return self.keyWindow?.rootViewController?.topMostViewController()
-    }
-}

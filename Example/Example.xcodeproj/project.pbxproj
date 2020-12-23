@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C415414425933C7400F3B87F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C415414325933C7400F3B87F /* CustomButton.swift */; };
 		C4B66E612054FD2A00399379 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B66E602054FD2A00399379 /* SecondViewController.swift */; };
 		C4B9F2841F5699D700E6B176 /* Notifire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B9F2831F5699D700E6B176 /* Notifire.framework */; };
 		C4B9F2851F5699D700E6B176 /* Notifire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4B9F2831F5699D700E6B176 /* Notifire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -32,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C415414325933C7400F3B87F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C4B66E602054FD2A00399379 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C4B9F2831F5699D700E6B176 /* Notifire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Notifire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C231761F39A196003B2CBA /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 				C4DFFF3C1F39A92D0018F828 /* Main.storyboard */,
 				C4B66E602054FD2A00399379 /* SecondViewController.swift */,
 				C4DFFF3E1F39A9360018F828 /* Launch Screen.storyboard */,
+				C415414325933C7400F3B87F /* CustomButton.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C415414425933C7400F3B87F /* CustomButton.swift in Sources */,
 				C4B66E612054FD2A00399379 /* SecondViewController.swift in Sources */,
 				C4C2317C1F39A196003B2CBA /* ViewController.swift in Sources */,
 				C4C2317A1F39A196003B2CBA /* AppDelegate.swift in Sources */,
