@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Notifire'
-  s.version          = '0.6'
+  s.version          = '2.0'
   s.summary          = 'Notifire can show a message. by : farhad faramarzi'
 
  
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.source           = { :git => 'https://github.com/farhad1985/Notifire.git', :tag => s.version.to_s }
  
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
   s.source_files = 'Notifire/*'
  
 end
