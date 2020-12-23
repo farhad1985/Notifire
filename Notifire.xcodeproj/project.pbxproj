@@ -23,6 +23,7 @@
 		C4AAAE9E1F3993040037DBFF /* Notifire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notifire.h; sourceTree = "<group>"; };
 		C4AAAEA61F3993EF0037DBFF /* Notifire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifire.swift; sourceTree = "<group>"; };
 		C4AAAEA81F3996010037DBFF /* NotifireType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifireType.swift; sourceTree = "<group>"; };
+		C4F94AD425937C8D00B14BDC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 				C4154140259331EA00F3B87F /* Extension */,
 				C415413F259331DD00F3B87F /* Model */,
 				C4AAAEA61F3993EF0037DBFF /* Notifire.swift */,
+				C4F94AD425937C8D00B14BDC /* Info.plist */,
 				C4AAAE9E1F3993040037DBFF /* Notifire.h */,
 			);
 			path = Notifire;
