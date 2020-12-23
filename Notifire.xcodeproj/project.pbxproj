@@ -35,6 +35,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C415413F259331DD00F3B87F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C41541392593304800F3B87F /* NotifirePosition.swift */,
+				C4AAAEA81F3996010037DBFF /* NotifireType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C4154140259331EA00F3B87F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C415413C2593310A00F3B87F /* ExNotifire.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		C4AAAE911F3993040037DBFF = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +71,11 @@
 		C4AAAE9D1F3993040037DBFF /* Notifire */ = {
 			isa = PBXGroup;
 			children = (
+				C4154140259331EA00F3B87F /* Extension */,
+				C415413F259331DD00F3B87F /* Model */,
 				C4AAAE9E1F3993040037DBFF /* Notifire.h */,
-				C41541392593304800F3B87F /* NotifirePosition.swift */,
-				C4AAAEA81F3996010037DBFF /* NotifireType.swift */,
 				C4AAAEA61F3993EF0037DBFF /* Notifire.swift */,
 				C4AAAE9F1F3993040037DBFF /* Info.plist */,
-				C415413C2593310A00F3B87F /* ExNotifire.swift */,
 			);
 			path = Notifire;
 			sourceTree = "<group>";
